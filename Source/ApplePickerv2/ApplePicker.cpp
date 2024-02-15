@@ -22,14 +22,12 @@ void AApplePicker::InitBaskets()
 {
 	health = maxHealth;
 
-	int spacing = 0;
 	FVector pos = FVector(-500, 0, 800);
 
 	for (int i = 0; i < maxHealth; i++)
 	{
 		pos.Z += 20;
 		AActor* basket = GetWorld()->SpawnActor<AActor>(basketPrefab, pos, GetActorRotation());
-		//spacing += 20;
 		baskets.Add(basket);
 	}
 }
