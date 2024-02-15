@@ -19,7 +19,25 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+	UFUNCTION(BlueprintCallable, Category = "Initialization")
+	void InitBaskets();
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	int health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	int maxHealth = 3;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	float speed = 2.5f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	TSubclassOf<AActor> basketPrefab;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	TArray<AActor*> baskets;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
